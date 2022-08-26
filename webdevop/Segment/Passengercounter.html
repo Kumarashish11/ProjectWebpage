@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>passenger counter</title>
+        <style>
+            body{
+                text-align: center;
+                font-weight: bold;
+                font-size: 2rem;
+                background-image: url('/Images/msg.svg') ;
+                background-size:cover;
+            }
+           #inc-btn{
+            height: 50px;
+            background-color: #f77062;
+            color: antiquewhite;
+            font-weight: bolder;
+            border-width: 0;
+            border-radius: 5px;
+           width: 10rem;
+           cursor: pointer;
+          
+           }
+           #inc-btn:active{
+            background: blue;
+            transition: all 0.3s,ease;
+           }
+           #save-btn{
+            border-width: 0;
+            margin-top: 10px;
+            background-color: green;
+            font-weight: bolder;
+            color: antiquewhite;
+            border-radius: 5px;
+           height: 50px;
+           width: 10rem;
+           cursor: pointer;
+          
+           }
+          
+           #save-btn:active{
+            opacity: 0.95;
+           
+            
+           }
+        </style>
+    </head>
+    <body>
+        <h1>People Entered:</h1>
+        <h2 id="count-el">0</h2>
+        <button  id="inc-btn" onclick="increament()">INCREAMENT</button>
+  <br/>      <button  id="save-btn" onclick="save()">SAVE</button>
+       <p id="save-el">Previous Entries:</p> 
+        <script>
+       //  document.getElementById("count-el").innerText=5
+       ////let count =45;
+      //// console.log(count)
+      let saveEl = document.getElementById("save-el")
+      let countEl =   document.getElementById("count-el");
+      console.log(saveEl)
+      let count=0;
+      function increament(){
+        console.log("clicked");
+        count+=1;
+        countEl.innerText=count;
+    }
+         
+        //save
+         function save(){
+let countstr = count + "-"
+saveEl.textContent  += countstr//either textContent or inner text
+countEl.textContent=0;
+count =0;
+            
+         }
+       
+      
+        </script>
+    </body>
+
+</html>
